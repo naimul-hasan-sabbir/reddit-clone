@@ -11,6 +11,12 @@ const main = async () => {
 		type: 'postgresql',
 		debug: !__prod__,
 	});
+	const post = orm.em.create(Post, {
+		title: 'my first post',
+		createdAt: '',
+		updatedAt: '',
+	});
+	await orm.em.persistAndFlush(post);
 };
 
 main();
