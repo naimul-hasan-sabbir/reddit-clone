@@ -7,6 +7,8 @@ export default {
 	migrations: {
 		path: path.join(__dirname, './migrations'),
 		// pattern: /^[\w-]+\d+\.[tj]s$/,
+		// path: 'dist/migrations',
+		// pathTs: 'src/migrations',
 		glob: '!(*.d).{js,ts}',
 	},
 	entities: [Post],
