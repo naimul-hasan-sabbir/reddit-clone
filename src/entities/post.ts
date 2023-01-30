@@ -1,7 +1,8 @@
-import { Entity, PrimaryKey, Property } from '@mikro-orm/core';
+import { Entity, OptionalProps, PrimaryKey, Property } from '@mikro-orm/core';
 
 @Entity()
 export class Post {
+	[OptionalProps]?: 'updatedAt' | 'createdAt';
 	@PrimaryKey()
 	_id!: number;
 
