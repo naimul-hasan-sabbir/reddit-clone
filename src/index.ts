@@ -46,6 +46,14 @@ const main = async () => {
 	await orm.em.persistAndFlush(post);
 	const posts = await orm.em.find(Post, {});
 	console.log(posts);
+
+	const app = express();
+	app.get('/', (_, res) => {
+		res.send('Hello');
+	});
+	app.listen(4000, () => {
+		console.log('Server started on localhost:4000');
+	});
 };
 
 main().catch((err) => {
